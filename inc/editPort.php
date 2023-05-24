@@ -1,16 +1,12 @@
 <?php
-include('database.php');
+include('Database.php');
 function GetPortfolio(){
     $sql = 'SELECT * FROM portfolio';
     $result = $GLOBALS['mysqli']  -> query($sql);
     foreach ($result as $portfolio) {
         echo '
         <div class="col-md-4">
-        <div class="product-item">
           <a href="#"><img src="'.$portfolio['img'].'" alt=""></a>            
-            <span>Reviews (24)</span>
-          </div>
-        </div>
       </div> ';
     }
 };

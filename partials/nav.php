@@ -14,7 +14,6 @@
 						<li><a href="index.php" class="smoothScroll">SERVICE</a></li>
 						<li><a href="index.php" class="smoothScroll">ABOUT</a></li>
 						<li><a href="index.php" class="smoothScroll">TEAM</a></li>
-						<li><a href="portfolio.php" class="smoothScroll">PORTFOLIO</a></li>
 						<li><a href="contact.php" class="smoothScroll">CONTACT</a></li>
 						<?php if (isset($_SESSION["user_id"])): ?>
 						<li class="nav-item">

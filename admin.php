@@ -21,10 +21,6 @@ if (isset($_POST['edit_portfolio'])) {
 };
 if (isset($_POST['add_portfolio'])) {
     $data = [
-        'brand' => $_POST['brand'],
-        'model' => $_POST['model'],
-        'price' => $_POST['price'],
-       
         'img'  => $_POST['img']
     ];
     $query = "INSERT INTO portfolio(img) VALUES (?)";

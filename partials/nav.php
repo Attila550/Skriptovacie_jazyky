@@ -16,7 +16,21 @@
 						<li><a href="index.php" class="smoothScroll">TEAM</a></li>
 						<li><a href="portfolio.php" class="smoothScroll">PORTFOLIO</a></li>
 						<li><a href="contact.php" class="smoothScroll">CONTACT</a></li>
-                        <li><a href="login.php" class="smoothScroll">LOGIN</a></li>
+						<?php if (isset($_SESSION["user_id"])): ?>
+						<li class="nav-item">
+							<a class="nav-link" href="logout.php">Logout</a>
+						</li>
+						<?php else: ?>
+						<li class="nav-item">
+							<a class="nav-link" href="register.php">Register</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="login.php">Login</a>
+						</li>
+
+
+
+	  <?php endif; ?>
 					</ul>
 				</div>
 			</div>

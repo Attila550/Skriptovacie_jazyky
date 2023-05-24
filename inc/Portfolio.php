@@ -1,3 +1,6 @@
+<?php include 'inc/config.php'; ?>
+
+
 <?php
     class Portfolio{
         public $db;

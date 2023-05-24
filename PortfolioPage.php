@@ -1,5 +1,14 @@
+<?php
+// Include the necessary files and instantiate the Portfolio class
+require_once 'partials/nav.php';
 
-<?php include 'partials/nav.php'; ?>
+$Portfolio = new Portfolio();
+
+// Retrieve the portfolio data
+$portfolio = $Portfolio->get_portfolio();
+?>
+<?php include 'inc/config.php'; ?>
+
 <main>		
 <!-- animate -->
         <link rel="stylesheet" href="css/animate.min.css">
@@ -70,7 +79,7 @@
 
                				 			<div class="iso-box graphic col-md-4 col-sm-6 col-xs-12">
                				 				<div class="portfolio-thumb">
-               				 					<img src="images/portfolio-img4.jpg" class="fluid-img" alt="portfolio img">
+               				 					<img src=url(\'' . $portfolio[$i]->img . '\');">' . $portfolio[$i]->name . 'class="fluid-img" alt="portfolio img">
                				 						<div class="portfolio-overlay">
                				 							<a href="images/portfolio-img4.jpg" class="fa fa-search portfolio-popup"></a>
                				 							<a href="#" class="fa fa-link"></a>
@@ -104,30 +113,15 @@
                				 				</div>
                				 			</div>
 
-        <?php
-            $portfolio = $Portfolio->get_portfolio();
-            print_r($portfolio);
-            for ($i=0;$i<count($portfolio);$i++){
-                $temp_i = $i+1;
-                if($temp_i%4==1){
-                    echo '<div class="row">';
-                    echo '<div class="col-25 portfolio text-white textcenter" style = "background-image: url(\''.$portfolio[$i]->img.'\');"'.'>';
-                    echo $portfolio[$i]->name;
-                    echo '</div>';
-                }
-                elseif($temp_i%4==0){
-                    echo '<div class="col-25 portfolio text-white textcenter" style = "background-image: url(\''.$portfolio[$i]->img.'\');"'.'>';
-                    echo $portfolio[$i]->name;
-                    echo '</div>';
-                    echo '</div>';
-                }
-                else{
-                    echo '<div class="col-25 portfolio text-white textcenter" style = "background-image: url(\''.$portfolio[$i]->img.'\');"'.'>';
-                    echo $portfolio[$i]->name;
-                    echo '</div>';
-                }
-                }
-        ?> 
+											<div class="row">
+                    <?php
+                    // Display the portfolio items
+                    for ($i = 0; $i < count($portfolio); $i++) {
+                        echo '<div class="col-md-3 col-sm-6 portfolio text-white textcenter" style="background-image: url(\'' . $portfolio[$i]->img . '\');">';
+                        echo $portfolio[$i]->name;
+                        echo '</div>';
+                    }
+                    ?>
 
                				 		</div>
                				 	</div>

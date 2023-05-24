@@ -26,7 +26,7 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 mysqli_report(MYSQLI_REPORT_OFF);
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "/Database.php";
 
 $sql = "INSERT INTO users (username, email, password_hash)
         VALUES (?, ?, ?)";

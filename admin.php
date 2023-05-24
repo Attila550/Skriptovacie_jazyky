@@ -1,5 +1,5 @@
 <?php
-include('database.php');
+include('Database.php');
 if (isset($_POST['edit_portfolio'])) {
     $data = [
         'id' => $_POST['id'],
